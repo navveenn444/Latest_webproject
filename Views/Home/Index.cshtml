@@ -1,0 +1,240 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html lang="en-US">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta charset="utf-8">
+    <title>Federal Electoral Candidates</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/templatemo-style.css">
+
+    <!-- jQuery -->
+    <script src="~/js/jquery-1.11.0.min.js"></script>
+    <script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="fluid-container">
+        <header class="site-header">
+            <div class="navbar-default navbar-fixed-top">
+                <div class="fluid-container">
+                    <div class="navbar-header">
+                        <ul class="nav navbar-nav navbar-left nav-main">
+                            <li style="margin-left: 20px;"><a class="link-service" asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+                        </ul>
+                        <a class="navbar-brand" href="#">Federal Electoral Canditates</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-main-ss"><a class="link-service" asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+                            @*<li><a class="link-service" href="./aboutus">About Us</a></li>*@
+                            <li><a class="link-service" asp-area="" asp-controller="Home" asp-action="aboutus">About Us</a></li>
+                            <li><a class="link-facts" href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="main-content">
+        <div class="fluid-container">
+            <div class="section-welcome">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <img src="~/img/header.png" class="img-responsive animated fadeInLeft" alt="Time is happiness">
+                    </div>
+                    <div class="col-md-8 text-center welcome-section">
+                        <br>
+                        <h2 class="animated fadeInDown">National Federal Election</h2>
+                        <br>
+                        <p class="animated fadeInRight">
+                            The Federal Election Commission (FEC) is an independent regulatory agency of the United States whose purpose is to enforce campaign finance law in United States federal elections. Created in 1974 through amendments to the Federal Election Campaign Act,[4] the commission describes its duties as "to disclose campaign finance information, to enforce the provisions of the law such as the limits and prohibitions on contributions, and to oversee the public funding of Presidential elections."
+                        </p>
+                        <br>
+                        <a href="./learnmore" class="button-grey animated fadeInUp">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="fluid-container">
+            <div class="section-services" id="services">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12 col-lg-4 text-center ">
+                        <article class="service animated fadeInUp">
+                            <div class="service-header">
+                                <h4>Candidates List</h4>
+                            </div>
+                            <div class="service-icon">
+                                <i class="fa fa-file-text-o"></i>
+                            </div>
+                            <div class="service-text">
+                                @*<p><a href="./candidates"> View, Edit, Delete candidates </a></p>*@
+                                <p><a class="link-service" asp-area="" asp-controller="Home" asp-action="candidates">View, Edit, Delete candidates</a></p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUN FACTS -->
+        <div class="fluid-container animated flipInX" id="facts">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <div class="section-header facts-header">
+                        <h3>Some facts about 2020 Elections </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section-facts">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 text-center">
+                        <div class="counter-item">
+                            <div class="counter-inner">
+                                <div class="counter-body">
+                                    <h2 class="start-count" data-count="1604">160+ million</h2>
+                                    <h6>Votes Cast</h6>
+                                    <div class="end-count"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .counter-item -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 text-center">
+                        <div class="counter-item">
+                            <div class="counter-inner">
+                                <div class="counter-body">
+                                    <h2 class="start-count" data-count="21">67%</h2>
+                                    <h6>Turnout Rate</h6>
+                                    <div class="end-count"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .counter-item -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 text-center">
+                        <div class="counter-item">
+                            <div class="counter-inner">
+                                <div class="counter-body">
+                                    <h2 class="start-count" data-count="302">100+ million</h2>
+                                    <h6>Voting by Mail</h6>
+                                    <div class="end-count"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 col-lg-3 text-center">
+                        <div class="counter-item">
+                            <div class="counter-inner">
+                                <div class="counter-body">
+                                    <h2 class="start-count" data-count="946">14+ billion</h2>
+                                    <h6>Expensive Election Ever</h6>
+                                    <div class="end-count"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- CONTACT US -->
+        <div class="fluid-container" id="contact">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <div class="section-header contact-header">
+                        <h3>Please write to us</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section-contact">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12 col-xs-12">
+                        <form action="#" method="post" id="contact-form">
+                            <fieldset>
+                                <label for="name">Name:</label>
+                                <input type="text" name="name" id="name">
+                            </fieldset>
+                            <fieldset>
+                                <label for="email">Email Address:</label>
+                                <input type="email" name="email" id="email">
+                            </fieldset>
+                            <fieldset>
+                                <label for="phone">Phone Number:</label>
+                                <input type="tel" name="phone" id="phone">
+                            </fieldset>
+                            <fieldset>
+                                <label for="message">Describe your issue</label>
+                                <textarea name="message" id="message" rows="4"></textarea>
+                            </fieldset>
+                            <fieldset>
+                                <input type="submit" class="button-dark" value="Send Message">
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="col-md-7 col-sm-12 col-xs-12">
+                        <div class="contact-infos">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Email:</strong> <a href="#">nponnaganti@usf.edu</a></p>
+                                    <p><strong>Phone:</strong> 813-360-8736</p>
+                                </div>
+                                <!-- <div class="col-md-6">
+                                    <p>Have a good day.</p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="fluid-container">
+            <footer class="site-footer">
+                <a href="#" class="back-to-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 padding-left-0">
+                        <p class="copyright">Copyright &copy; Group 7</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 padding-right-0">
+                        <ul class="social">
+                            <li><a target="_blank" title="follow me on linkedin" href="https://www.linkedin.com/in/naveen-kumar-ponnaganti-3756ab121"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                            <li><a target="_blank" title="follow me on linkedin" href="https://www.instagram.com/ponagantinavveenn/"><i class="fa fa-instagram"></i> Instagram</a></li>
+                            <li><a target="_blank" title="follow me on facebook" href="https://www.facebook.com/naveen.ponnaganti.5"><i class="fa fa-facebook"></i> facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- Plugins -->
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/custom.js"></script>
+
+    <script src="~/js/jquery.gmap3.min.js"></script>
+
+
+
+</body>
+</html>
