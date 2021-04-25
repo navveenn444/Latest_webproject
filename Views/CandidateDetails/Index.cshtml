@@ -1,0 +1,195 @@
+﻿@model IEnumerable<Mywebproject_core.Models.CandidateDetail>
+
+<html lang="en-US">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimal-ui" />
+    <meta charset="utf-8" />
+    <title>Federal Electoral Canditates</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="~/css/animate.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/templatemo-style.css" />
+
+    <!-- jQuery -->
+    <script src="~/js/jquery-1.11.0.min.js"></script>
+    <script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/js/Chart.min.js"></script>
+</head>
+<body>
+    <div class="fluid-container">
+        <header class="site-header">
+            <div class="navbar-default navbar-fixed-top">
+                <div class="fluid-container">
+                    <div class="navbar-header">
+                        <ul class="nav navbar-nav navbar-left nav-main">
+                            <li style="margin-left: 20px;"><a class="link-service" asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+                        </ul>
+                        <a class="navbar-brand" href="./index#">Federal Electoral Canditates</a>
+                        <button type="button"
+                                class="navbar-toggle collapsed"
+                                data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul style="margin: right 20px;" class="nav navbar-nav navbar-right">
+                            <li class="nav-main-ss"><a class="link-service" asp-area="" asp-controller="Home" asp-action="index">Home</a></li>
+                            <li><a class="link-service" asp-area="" asp-controller="Home" asp-action="aboutus">About Us</a></li>
+                            <li><a class="link-facts" href="Home/index#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="main-content">
+        <div class="fluid-container">
+            <div class="section-welcome">
+                <h2>Candidates List</h2>
+                <p>
+                    The table containes all candidates details
+                </p>
+                <p><a asp-action="Create">Add New Candidate</a></p>
+            </div>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.party)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.candidate_status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.state)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.party)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.candidate_status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.state)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.candidate_id">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.candidate_id">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.candidate_id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @*<div class="section-welcome">
+                <canvas id="mybarChart"></canvas>
+            </div>*@
+    </div>
+    <div class="fluid-container">
+        <footer class="site-footer">
+            <a href="#" class="back-to-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 padding-left-0">
+                    <p class="copyright">Copyright &copy; Group 7</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 padding-right-0">
+                    <ul class="social">
+                        <li><a target="_blank" title="follow me on linkedin" href="https://www.linkedin.com/in/naveen-kumar-ponnaganti-3756ab121"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a target="_blank" title="follow me on linkedin" href="https://www.instagram.com/ponagantinavveenn/"><i class="fa fa-instagram"></i> Instagram</a></li>
+                        <li><a target="_blank" title="follow me on facebook" href="https://www.facebook.com/naveen.ponnaganti.5"><i class="fa fa-facebook"></i> facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    @*</div>*@
+
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/custom.js"></script>
+
+    <script src="js/jquery.gmap3.min.js"></script>
+    @*<script>
+            //https://api.open.fec.gov/v1/candidates/?api_key=ZEksIdffy3B73CsLvN2kl7YZB5nEu5mBpwP9BFC6&sort_null_only=false&per_page=20&sort_nulls_last=false&page=1&sort=name&sort_hide_null=false
+            (function () {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var data = JSON.parse(this.responseText);
+                        console.log(data);
+                        var table = document.getElementById("candidates-list");
+
+
+                        let group = data.results.reduce((r, a) => {
+                            r[a.state] = [...r[a.state] || [], a];
+                            return r;
+                        }, {});
+                        let label = Object.keys(group)
+                        let b = []
+                        Object.keys(group).forEach(key => {
+                            b.push(group[key].length)
+                        })
+                        console.log(label, b)
+                        let backgroundcolor = new Array(b.length).fill('gold')
+                        var ctx = document.getElementById("mybarChart").getContext("2d")
+                        console.log(ctx)
+                        var mybarChart = new Chart(ctx,
+                            {
+                                type: 'bar',
+                                data: {
+                                    labels: label,
+                                    datasets: [
+                                        {
+                                            label: "CANDIDATES BY STATE",
+                                            data: b,
+                                            backgroundColor: backgroundcolor
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    legend: { display: false },
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                max: 7,
+                                                min: 0,
+                                                stepSize: 1
+                                            }
+                                        }]
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'CANDIDATES BY STATE'
+                                    }
+                                }
+                            });
+
+                    }
+                };
+                xhttp.open("GET", "https://api.open.fec.gov/v1/candidates/?api_key=ZEksIdffy3B73CsLvN2kl7YZB5nEu5mBpwP9BFC6&sort_null_only=false&per_page=20&sort_nulls_last=false&page=1&sort=name&sort_hide_null=false", true);
+                xhttp.send();
+            }())
+        </script>*@
+</body>
+</html>

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Mywebproject_core.Models;
-using static Mywebproject_core.Models.Mymodel;
 using Newtonsoft.Json;
 using System.Net.Http;
 
@@ -30,7 +29,7 @@ namespace Mywebproject_core.Controllers
             string FEDERAL_ELECTORAL_API_PATH = BASE_URL + "/candidates?limit=20";
             string candidatesData = "";
 
-            Candidates candidates = null;
+            CandidateDetail candidates = null;
 
             httpClient.BaseAddress = new Uri(FEDERAL_ELECTORAL_API_PATH);
 
@@ -46,7 +45,7 @@ namespace Mywebproject_core.Controllers
                 if (!candidatesData.Equals(""))
                 {
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
-                    candidates = JsonConvert.DeserializeObject<Candidates>(candidatesData);
+                    candidates = JsonConvert.DeserializeObject<CandidateDetail>(candidatesData);
                 }
             }
             catch (Exception e)

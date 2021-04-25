@@ -63,7 +63,7 @@
                             The Federal Election Commission (FEC) is an independent regulatory agency of the United States whose purpose is to enforce campaign finance law in United States federal elections. Created in 1974 through amendments to the Federal Election Campaign Act,[4] the commission describes its duties as "to disclose campaign finance information, to enforce the provisions of the law such as the limits and prohibitions on contributions, and to oversee the public funding of Presidential elections."
                         </p>
                         <br>
-                        <a href="./learnmore" class="button-grey animated fadeInUp">Learn More</a>
+                        <a class="button-grey animated fadeInUp" asp-area="" asp-controller="Home" asp-action="Learnmore">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,9 @@
                             </div>
                             <div class="service-text">
                                 @*<p><a href="./candidates"> View, Edit, Delete candidates </a></p>*@
-                                <p><a class="link-service" asp-area="" asp-controller="Home" asp-action="candidates">View, Edit, Delete candidates</a></p>
+                                @*<p><a class="link-service" asp-area="" asp-controller="Candidates" asp-action="Index">API response_MVC</a></p>*@
+                                <p><a class="link-service" asp-area="" asp-controller="CandidateDetails" asp-action="Index">Add, View, Edit, Delete candidates</a></p>
+                                <p><a class="link-service" asp-area="" asp-controller="Home" asp-action="candidates">candidate list</a></p>
                             </div>
                         </article>
                     </div>

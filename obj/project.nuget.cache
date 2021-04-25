@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SEfHZ8v1sGfcWoPxcTQpKHwWEKyJBESiAhsNbUw5UWJjjL2umnFkz/3HSwdwUZbmJHy6fQolCd+8A1y8u3ehvQ==",
+  "dgSpecHash": "8wi97jg0W4aWR9Z6eF3/Vldd9nP5WeHG3iuiWAbncS4Mz0wT6bVv2k5jTrOvPvnlSBINruwzoXe8ChZFR4zNtw==",
   "success": true,
-  "projectFilePath": "C:\\Navveenn\\DIS\\Mywebproject_core\\Mywebproject_core.csproj",
+  "projectFilePath": "C:\\Navveenn\\DIS\\Navveenn-project\\Latest_webproject\\Mywebproject_core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\apoli\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\apoli\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Mywebproject_core.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Mywebproject_core
 {
@@ -24,6 +26,9 @@ namespace Mywebproject_core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<CandidateDetailContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("CandidateDetailContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +55,7 @@ namespace Mywebproject_core
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Candidates}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Navveenn\\DIS\\Mywebproject_core\\Mywebproject_core.csproj": {}
+    "C:\\Navveenn\\DIS\\Navveenn-project\\Latest_webproject\\Mywebproject_core.csproj": {}
   },
   "projects": {
-    "C:\\Navveenn\\DIS\\Mywebproject_core\\Mywebproject_core.csproj": {
+    "C:\\Navveenn\\DIS\\Navveenn-project\\Latest_webproject\\Mywebproject_core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Navveenn\\DIS\\Mywebproject_core\\Mywebproject_core.csproj",
+        "projectUniqueName": "C:\\Navveenn\\DIS\\Navveenn-project\\Latest_webproject\\Mywebproject_core.csproj",
         "projectName": "Mywebproject_core",
-        "projectPath": "C:\\Navveenn\\DIS\\Mywebproject_core\\Mywebproject_core.csproj",
+        "projectPath": "C:\\Navveenn\\DIS\\Navveenn-project\\Latest_webproject\\Mywebproject_core.csproj",
         "packagesPath": "C:\\Users\\apoli\\.nuget\\packages\\",
-        "outputPath": "C:\\Navveenn\\DIS\\Mywebproject_core\\obj\\",
+        "outputPath": "C:\\Navveenn\\DIS\\Navveenn-project\\Latest_webproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
