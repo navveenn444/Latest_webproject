@@ -27,6 +27,11 @@ namespace Mywebproject_core
         {
             services.AddControllersWithViews();
 
+            //var connection = @"Server=(localdb)\\MSSQLLocalDB;Database=CandidateDetailContext-3;Trusted_Connection=True;MultipleActiveResultSets=true";
+
+
+            //services.AddDbContext<CandidateDetailContext>
+            //        (options => options.UseSqlServer(connection));
             services.AddDbContext<CandidateDetailContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("CandidateDetailContext")));
         }
@@ -34,6 +39,11 @@ namespace Mywebproject_core
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            //{
+            //    var context = serviceScope.ServiceProvider.GetRequiredService<CandidateDetailContext>();
+            //    context.Database.EnsureCreated();
+            //}
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

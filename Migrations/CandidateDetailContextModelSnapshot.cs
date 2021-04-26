@@ -24,15 +24,19 @@ namespace Mywebproject_core.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("candidate_status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("party")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("state")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("candidate_id");
